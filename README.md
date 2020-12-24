@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+### RoboFriends Web page using React
+#### DSC web study, from udemy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
 
-## Available Scripts
+#### React 설치 및 앱 만들기
+> https://ko.reactjs.org/docs/create-a-new-react-app.html
+1. $ npm install -g create-react-app
+2. $ create-react-app [app_name]
+3. $ cd [app_name]
+4. $ npm start
+> package.json 의 scripts부분에 start가 있다
 
-In the project directory, you can run:
+5. $ npm install tachyons ( bootstap 같은것)
 
-### `npm start`
+#### 강의 내용
+* public/favicon.ico : 상단 탭에 뜨는 작은 아이콘
+* src/index.js : 기본이 되는 js file
+* package.json의 react-scripts 버전을 수정하고 단지 npm install 만 해주면 쉽게 update가능(내가 짠 코드는 수정없이)
+* react => component라고 생각됨
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* index.js 에서 다른 파일에서 작성한 class or function 을 가져올 수 있다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+``` js
+//  index.js
+import Hello from './Hello' // 내가 만든 js file을 Hello로 들고와서 tag처럼 사용할 수 있다
+<Hello greeting={'Hello' + 'React Ninja'}/> // greeting은 Hello의 properties 중 하나
 
-### `npm test`
+// Hello.js
+import React, { Component } from 'react';
+import './Hello.css'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+class Hello extends Component {
+    render() {
+        return ( // 여러줄일 때 ()로 감싸기
+            // tc : text center(tachyons), class= 대신 className으로 쓴다(class는 js에서 예약어이므로 못쓴다)
+            // actual html 이 아니다. 이건 virtual DOM (JSX)
+            <div className='f1 tc'> 
+                <h1> Hello World</h1>
+                <p>{this.props.greeting}</p> 
+            </div>
+        )
+    }
+}
+export default Hello // export해줘야 다른곳에서 사용가능. default를 붙이면 Hello 하나만 export
+```
 
-### `npm run build`
+* Hello.js에서의 Hello class 는 Hello function 과 같다
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+``` js
+const Hello = (props) => { // this.props에서 props는 매개변수였다..!
+    return ( 
+            <div className='f1 tc'> 
+                <h1> Hello World</h1>
+                <p>{props.greeting}</p> 
+            </div>
+        )
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default Hello
+```
+* html형식(jsx)에서 js 구문은 {}으로 감싸준다
