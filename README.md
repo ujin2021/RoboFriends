@@ -104,3 +104,4 @@ export default Hello
 * package.json의 scripts 부분에 "predeploy": "npm run build", "deploy": "gh-pages -d build" 추가
 * $ npm run deploy
 * github 해당 repo - settings -> github page -> gh-pages로 branch 설정
+* 변경사항 있을 시 npm run deploy 다시 실행
