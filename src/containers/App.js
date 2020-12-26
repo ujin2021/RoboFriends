@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CardList from '../components/CardList'
 import SearchBox from '../components/SearchBox'
 import Scroll from '../components/Scroll' // scroll을 내려도 검색창이 사라지지 않도록
+import ErrorBoundary from '../components/ErrorBoundary'
 import './App.css'
 
 class App extends Component {
@@ -35,7 +36,9 @@ class App extends Component {
                     <h1>RoboFriends</h1>
                     <SearchBox searchChange={this.onSearchChange}/>
                     <Scroll>
-                        <CardList robots={filteredRobots} />
+                        <ErrorBoundary>
+                            <CardList robots={filteredRobots} />
+                        </ErrorBoundary>
                     </Scroll>
                 </div>
             )

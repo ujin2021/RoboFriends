@@ -90,3 +90,9 @@ export default Hello
 * $ npm run build (최적화, package.json scripts의 build)
 * build dir 생성, 모든 css, js, .. 파일들이 있다
 * 배포하는데 필요한 모든 것이 build파일에 존재
+
+#### npm audit (react version update)
+
+* $ npm audit
+* $ npm audit fix --force
+* section19 226, 228 다시 공부하기!

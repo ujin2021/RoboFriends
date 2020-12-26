@@ -2,6 +2,9 @@ import React from 'react'
 import Card from './Card'
 
 const CardList = ({ robots }) => {
+    // if (true) {
+    //     throw new Error('NOOOOOOOO') // 일부러 eror발생(ErrorBoundary확인용)
+    // }
     const cardComponent = robots.map((user, i) => { // map needs return, i for index
         return (
         <Card 
