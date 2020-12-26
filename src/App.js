@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CardList from './CardList'
 import SearchBox from './SearchBox'
+import Scroll from './Scroll' // scroll을 내려도 검색창이 사라지지 않도록
 import './App.css'
 
 class App extends Component {
@@ -36,27 +37,14 @@ class App extends Component {
                 <div className='tc'>  
                     <h1>RoboFriends</h1>
                     <SearchBox searchChange={this.onSearchChange}/>
-                    <CardList robots={filteredRobots} />
+                    <Scroll>
+                        <CardList robots={filteredRobots} />
+                    </Scroll>
                 </div>
             )
         }
         // console.log('render') 
     }
 }
-
-// const state = {
-//     robots : robots,
-//     searchfield = ''
-// }
-
-// const App = () => {
-//     return (
-//         <div className='tc'>
-//         <h1>RoboFriends</h1>
-//         <SearchBox />
-//         <CardList robots = {robots}/>
-//         </div>
-//     )
-// }
 
 export default App
