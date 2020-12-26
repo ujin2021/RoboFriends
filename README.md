@@ -96,3 +96,8 @@ export default Hello
 * $ npm audit
 * $ npm audit fix --force
 * section19 226, 228 다시 공부하기!
+
+#### 배포(github사용)
+
+* package.json 파일에 homepage : "https//[github_username].github.io/[repo_name]" 추가
+* github page install -> $ install --save gh-pages
