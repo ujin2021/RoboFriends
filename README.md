@@ -100,4 +100,7 @@ export default Hello
 #### 배포(github사용)
 
 * package.json 파일에 homepage : "https//[github_username].github.io/[repo_name]" 추가
-* github page install -> $ install --save gh-pages
+* github page install -> $ npm install --save gh-pages
+* package.json의 scripts 부분에 "predeploy": "npm run build", "deploy": "gh-pages -d build" 추가
+* $ npm run deploy
+* github 해당 repo - settings -> github page -> gh-pages로 branch 설정
