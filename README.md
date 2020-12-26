@@ -59,4 +59,17 @@ const Hello = (props) => { // this.props에서 props는 매개변수였다..!
 
 export default Hello
 ```
+
 * html형식(jsx)에서 js 구문은 {}으로 감싸준다
+* state(부모) >> props(자식)
+* 우리가 만든 일반적인 component : props을 읽고 수행, props는 우리가 변경할 수 없다
+* search하는 것에 따라 card를 다르게 하려면 '상태'가 필요하고, 상태는 변경할 수 있다
+* state라는 상수 정의가 필요하다
+* <a href='https://ko.reactjs.org/docs/react-component.html'> life cycle method </a>: app이 실행될 때 자동으로 트리거 되는 함수들(constructor, render,...) => arrow function형태를 사용하지 않는다
+    * Mounting : 새로고침을 클릭시, index.html의 <div id='root'></div>가 컴포넌트로 대체된다(App)
+    > constructor(), componentWillMount(), render(), componentDidMount()
+    * Updating : 구성요소 변경 시
+    > 입력을 받아 field가 변경되었을 때 다시 rendering
+    * Unmounting : 페이지에서 삭제되는 경우(mount 해제)
+* 각 함수마다 console.log로 어느 함수인지 찍어보면 constructor -> render -> componentDidMount -> render
+    * constructor을 확인하고, rendering하고, update하고(componentDidMount), update된 것을 다시 rendering한다
