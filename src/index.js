@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom' // react 와 browser간 접착제(app간의 접
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import 'tachyons'
-import App from './App' // 하나의 큰 구성요소
+import App from './containers/App' // 하나의 큰 구성요소
 import { robots } from './robots' // default export가 아니면 {}로 감싸줘야함
 
 // main js

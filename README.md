@@ -3,7 +3,7 @@
 
 <br>
 
-#### React 설치 및 앱 만들기
+#### React 설치 및 앱 만들기, 실행
 > https://ko.reactjs.org/docs/create-a-new-react-app.html
 1. $ npm install -g create-react-app
 2. $ create-react-app [app_name]
@@ -13,7 +13,7 @@
 
 5. $ npm install tachyons ( bootstap 같은것)
 
-#### 강의 내용
+#### 기본 파일
 * public/favicon.ico : 상단 탭에 뜨는 작은 아이콘
 * src/index.js : 기본이 되는 js file
 * package.json의 react-scripts 버전을 수정하고 단지 npm install 만 해주면 쉽게 update가능(내가 짠 코드는 수정없이)
@@ -60,7 +60,12 @@ const Hello = (props) => { // this.props에서 props는 매개변수였다..!
 export default Hello
 ```
 
+#### jsx
+
 * html형식(jsx)에서 js 구문은 {}으로 감싸준다
+
+#### state
+
 * state(부모) >> props(자식)
 * 우리가 만든 일반적인 component : props을 읽고 수행, props는 우리가 변경할 수 없다
 * search하는 것에 따라 card를 다르게 하려면 '상태'가 필요하고, 상태는 변경할 수 있다
@@ -73,3 +78,15 @@ export default Hello
     * Unmounting : 페이지에서 삭제되는 경우(mount 해제)
 * 각 함수마다 console.log로 어느 함수인지 찍어보면 constructor -> render -> componentDidMount -> render
     * constructor을 확인하고, rendering하고, update하고(componentDidMount), update된 것을 다시 rendering한다
+
+
+#### structuring
+
+* components - pure functions 모음
+* containers - life cycle method가 포함된 코드 모음
+
+#### build
+
+* $ npm run build (최적화, package.json scripts의 build)
+* build dir 생성, 모든 css, js, .. 파일들이 있다
+* 배포하는데 필요한 모든 것이 build파일에 존재
