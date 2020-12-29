@@ -105,3 +105,10 @@ export default Hello
 * $ npm run deploy
 * github 해당 repo - settings -> github page -> gh-pages로 branch 설정
 * 변경사항 있을 시 npm run deploy 다시 실행
+
+#### Hooks
+
+* class로 짠 App을 function으로 변경
+* https://ko.reactjs.org/docs/hooks-intro.html
+* constructor() => useState
+* componentDidMount() => useEffect
